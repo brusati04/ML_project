@@ -199,3 +199,21 @@ match modello:
         print(confusion_matrix(y_test, y_pred_dtc))
 
         print("Accouracy: ", accuracy_score(y_test, y_pred_dtc))
+
+
+    case "perceptron":
+            # Creiamo un modello Perceptron e lo addestriamo
+            model_perceptron = Perceptron(max_iter=1000, random_state=42)
+            model_perceptron.fit(X_train, y_train)
+
+            # Effettuiamo predizioni sul test set
+            y_pred_perceptron = model_perceptron.predict(X_test)
+
+            # Valutiamo le performance del modello
+            print("Report Perceptron:")
+            print(classification_report(y_test, y_pred_perceptron))
+
+            print("Matrice di Confusione Perceptron:")
+            print(confusion_matrix(y_test, y_pred_perceptron))
+            print("Accouracy: ", accuracy_score(y_test, y_pred_perceptron))
+
