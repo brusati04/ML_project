@@ -217,3 +217,4 @@ match modello:
             print(confusion_matrix(y_test, y_pred_perceptron))
             print("Accouracy: ", accuracy_score(y_test, y_pred_perceptron))
 
+
