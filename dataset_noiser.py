@@ -43,7 +43,7 @@ df.info()
 
 target_column = 'smoking'
 # Get the minimum count of samples per class to maintain balance
-min_samples_per_class = 12543 // df[target_column].nunique()
+min_samples_per_class = 23658 // df[target_column].nunique()
 
 # Perform stratified sampling
 df_sampled = df.groupby(target_column).apply(lambda x: x.sample(n=min_samples_per_class, random_state=42))
@@ -51,8 +51,9 @@ df_sampled = df.groupby(target_column).apply(lambda x: x.sample(n=min_samples_pe
 # Drop the extra index added by groupby
 df_sampled = df_sampled.reset_index(drop=True)
 
+n=20000
 # Save the balanced dataset
-df_sampled.to_csv("balanced_sampled_dataset.csv", index=False)
+df_sampled.to_csv(f"dataset_{n}.csv", index=False)
 
 print(df_sampled[target_column].value_counts())  # Check if balanced
 
