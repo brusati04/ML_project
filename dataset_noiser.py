@@ -36,7 +36,7 @@ df.info()
 
 for col in target_columns:
     if col in df.columns:
-        df[col] = add_missing(df[col], random.randint(1000,5000))
+        df[col] = add_missing(df[col], random.randint(500,2000))
     
 df.info()
 
